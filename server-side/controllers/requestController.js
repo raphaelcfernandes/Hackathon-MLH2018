@@ -1,6 +1,7 @@
 var PythonShell = require('python-shell');
 var spawn = require("child_process");
 var util = require("util");
+var process = require("process")
 
 module.exports = function (app) {
     var requestController = {
@@ -56,17 +57,24 @@ module.exports = function (app) {
             py.stdout.on('data', function (data) {
                 var textChunk = data.toString('utf8');// buffer to string
                 util.log(textChunk);
+                
                 res.json({suggest:textChunk});
             });
             py.stdin.write(JSON.stringify(data));
             py.stdin.end();
         },
         imageToText: function (req, res) {
+            
+            var pwd = process.cwd()
+            console.log(pwd)
             var spawn = require('child_process').spawn,
-                sh = spawn('tesseract' ['EOB_images/demo.png', 'EOB_image_info', '-psm', '1']);
-                console.log("Should have spawn tess")
+                sh = spawn('tesseract', [pwd + '/EOB_images/demo.png', pwd + '/EOB_image_info']);
+                py = spawn('python', [pwd + 'parse_EOB.py'])
+                
+            console.log("Should have spawned tess and EOBtext->database")
+
             res.sendStatus(200);
-        }
+        } 
     };
     function runPythonScript(res) {
         var spawn = require('child_process').spawn;

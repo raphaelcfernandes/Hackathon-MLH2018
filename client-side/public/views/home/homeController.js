@@ -18,7 +18,7 @@ app.controller('homeCtrl', function ($scope, $state, $rootScope, $timeout, $mdDi
     }
 
     $scope.captureImage = function () {
-        $rootScope.req('/textToImage', null, 'POST', function (success) {
+        $rootScope.req('/imageToText', null, 'POST', function (success) {
             console.log("capturing image");
             // $scope.allergy = '';
         }, function (err) {
@@ -56,6 +56,7 @@ app.controller('homeCtrl', function ($scope, $state, $rootScope, $timeout, $mdDi
                 data: data
             };
             $rootScope.req('/sendMedicationName', datas, 'POST', function (success) {
+                console.log(success)
                 $mdDialog.show(
                     $mdDialog.alert()
                         .parent(angular.element(document.querySelector('#popupContainer')))

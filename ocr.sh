@@ -1,2 +1,2 @@
-tesseract EOB_images/demo.png EOB_image_info -l eng -psm 1
+tesseract EOB_images/MSP_CALC EOB_image_info -l eng -psm 1
 

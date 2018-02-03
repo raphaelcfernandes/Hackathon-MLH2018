@@ -1,6 +1,7 @@
-import csv
 import datetime
 import sys
+import csv
+
 import json
 def read_data(file_name, list):
     with open(file_name) as file:
@@ -9,15 +10,6 @@ def read_data(file_name, list):
             if i != 0:
                 list.append(row)
 
-
-# still need to take care of case sensitive drug names
-def cross_reference(personal, ref):
-    for med1 in personal:
-        for med2 in ref:
-            if med1 == med2:
-                return False
-    return True
-
 def time(d):
     today = datetime.datetime.now().date()
     d = d.split("/")
@@ -25,10 +17,11 @@ def time(d):
     days = (today-date).days
     print(days)
     return days
+
+result = "- Neutral"
 lines = sys.stdin.readlines()
 lines = json.loads(lines[0])
 bar_code = lines[0]
-result = ""
 
 # Data structures:
 # [[drug name, [list of interacting drugs], [list of side effects]], ...]
@@ -57,24 +50,24 @@ for record in my_data:
         my_meds.append(record[1])
         # all_meds_dates.append(record[2])
     elif record != []:
-        if record[0] == "IMAGING" or record[0] == "PHYSICIAN" or record[0] == "ALLERGY":
+        if record[0] == "IMAGING" or record[0] == "PHYSICIAN" or record[0] == "ALLERGY" or record[0] == "PROBLEM":
             my_conditions.append(record[1])
             # all_keywords_dates.append(record[2])
-
+print(bar_code)
 for med in my_meds:
     for row in reference:
         if med == row[0] and bar_code in row[1]:
-            result = "Not Suggested"
-        else:
-            result = "Neutral"
+            result = "- Not Suggested"
 
 side_effects = []
+precautions = []
 for row in reference:
     if bar_code == row[0]:
         side_effects = row[2]
+        precautions = row[3]
 
 for condition in my_conditions:
-    if condition in side_effects:
-        result = "Not Suggested"
+    if condition in side_effects or condition in precautions:
+        result = "- Not Suggested"
 
 print(result)
