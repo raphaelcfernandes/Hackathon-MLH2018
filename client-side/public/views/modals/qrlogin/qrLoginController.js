@@ -6,22 +6,17 @@ app.controller('qrLoginCtrl', function($scope,$rootScope,$state,$timeout,$mdDial
     $scope.showGreetingqr = false;
 
     $scope.onSuccess = function(data) {
-        console.log(data);
-        $mdDialog.hide();
-        // if(data) {
-        //     var datas = {
-        //         USER: "no",
-        //         data: data
-        //     };
-        //     $rootScope.req('/login', datas, 'POST', function (success) {
-        //         sessionStorage.setItem("token", success.token);
-        //         sessionStorage.setItem("tipoProfissional", success.tipoProfissional);
-        //         $mdDialog.hide();
-        //         $state.go('home');
-        //     }, function (err) {
-        //         $scope.msg_error = "QR-Code inválido";
-        //     });
-        // }
+        if(data) {
+            var datas = {
+                data: data
+            };
+            $rootScope.req('/sendMedicationName', datas, 'POST', function (success) {
+                console.log(success);
+                $mdDialog.hide();
+            }, function (err) {
+                $scope.msg_error = "QR-Code inválido";
+            });
+        }
     };
 
     $scope.onError = function(error) {
