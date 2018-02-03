@@ -73,3 +73,15 @@ IMAGING,lung,3/1/2017
 PHYSICIAN,na,4/1/2017
 DRUGS,losartan,1/1/2018
 DRUGS,captopril,2/1/2018
+DRUGS,captopril
+PROBLEM,hypertension
+DRUGS,captopril
+PROBLEM,hypertension
+DRUGS,captopril
+PROBLEM,hypertension
+DRUGS,captopril
+PROBLEM,hypertension
+TYPE,detail
+DRUGS,captopril
+PROBLEM,hypertension
+PROBLEM,fever
