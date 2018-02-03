@@ -1,5 +1,25 @@
-<div layout="row" layout-align="center"  layout-margin>
-    <md-button class="md-fab md-primary" type="button"  aria-label="Log in com Qr-Code" ng-click="openQrl($event)" >
+<div layout="row" layout-align="center" layout-margin>
+    <md-button class="md-fab md-primary" type="button" aria-label="Log in com Qr-Code" ng-click="openQrl($event)">
         <md-icon md-svg-src="../../assets/images/svg/qr-code.svg"></md-icon>
     </md-button>
+</div>
+
+<div ng-controller="homeCtrl as ctrl" layout="column" ng-cloak>
+    <md-content class="md-padding">
+        <form ng-submit="$event.preventDefault()">
+            
+            <md-autocomplete ng-disabled="ctrl.isDisabled" md-no-cache="ctrl.noCache" md-selected-item="ctrl.selectedItem" md-search-text-change="ctrl.searchTextChange(ctrl.searchText)"
+                md-search-text="ctrl.searchText" md-items="item in ctrl.querySearch(ctrl.searchText)" md-item-text="item.display"
+                md-min-length="0" placeholder="What is your favorite US state?">
+                <md-item-template>
+                    <span md-highlight-text="ctrl.searchText" md-highlight-flags="^i">{{item.display}}</span>
+                </md-item-template>
+                <md-not-found>
+                    No states matching "{{ctrl.searchText}}" were found.
+                    <a ng-click="ctrl.newState(ctrl.searchText)">Create a new one!</a>
+                </md-not-found>
+            </md-autocomplete>
+            <br/>
+        </form>
+    </md-content>
 </div>
