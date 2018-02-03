@@ -45,10 +45,10 @@ for record in eob:
         current_meds.append(record[1])
 
 for my_med in current_meds:
-    print(my_med)
     for not_with_my_med in interaction:
-        print(not_with_my_med)
         if my_med in not_with_my_med[1].split(", "):
             avoid.append(not_with_my_med[0])
+
+
 
 avoid = list(set(avoid))

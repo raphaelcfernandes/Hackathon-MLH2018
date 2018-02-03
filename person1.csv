@@ -1,2 +1,2 @@
-Symptoms,Allergy,Age,Weight,Empty Stomach,severity
-headache,"lactose, cat",12,36,n,5
+Symptoms,Allergy,Age,Weight,severity
+headache,"lactose, cat",12,36,5
