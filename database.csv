@@ -82,3 +82,6 @@ PROBLEM,hypertension
 DRUGS,captopril
 PROBLEM,hypertension
 TYPE,detail
+DRUGS,captopril
+PROBLEM,hypertension
+PROBLEM,fever
