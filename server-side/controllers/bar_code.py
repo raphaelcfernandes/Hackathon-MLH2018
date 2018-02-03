@@ -1,7 +1,7 @@
 import csv
 import datetime
 import sys
-
+import json
 def read_data(file_name, list):
     with open(file_name) as file:
         lines = csv.reader(file)
@@ -25,17 +25,18 @@ def time(d):
     days = (today-date).days
     print(days)
     return days
-
-bar_code = sys.argv[1]
+lines = sys.stdin.readlines()
+lines = json.loads(lines[0])
+bar_code = lines[0]
 result = ""
 
 # Data structures:
 # [[drug name, [list of interacting drugs], [list of side effects]], ...]
 reference = []
-read_data('reference.csv', reference)
+read_data('/home/raphael/Documents/hackathon/server-side/controllers/reference.csv', reference)
 
 my_data = []
-read_data('database.csv', my_data)
+read_data('/home/raphael/Documents/hackathon/server-side/controllers/database.csv', my_data)
 
 inferences = []
 
