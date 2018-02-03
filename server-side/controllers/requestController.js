@@ -9,7 +9,7 @@ module.exports = function (app) {
         },
         sendAllergy: function (req, res) {
             var spawn = require('child_process').spawn,
-                py = spawn('python', ['/home/raphael/Documents/hackathon/server-side/controllers/test.py']),
+                py = spawn('python', ['/home/raphael/Documents/hackathon/server-side/controllers/append_to_database.py']),
                 data = [req.body.arg1, req.body.arg2],
                 dataString = '';
 
@@ -29,7 +29,7 @@ module.exports = function (app) {
         },
         sendProblem: function (req, res) {
             var spawn = require('child_process').spawn,
-                py = spawn('python', ['/home/raphael/Documents/hackathon/server-side/controllers/test.py']),
+                py = spawn('python', ['/home/raphael/Documents/hackathon/server-side/controllers/append_to_database.py']),
                 data = [req.body.arg1, req.body.arg2],
                 dataString = '';
 
@@ -48,23 +48,23 @@ module.exports = function (app) {
 
         },
         medicationName: function (req, res) {
-            console.log(req.body);
             var spawn = require('child_process').spawn,
-                py = spawn('python', ['/home/raphael/Documents/hackathon/server-side/controllers/test.py']),
+                py = spawn('python', ['/home/raphael/Documents/hackathon/server-side/controllers/bar_code.py']),
                 data = [req.body.data],
                 dataString = '';
-
+            var result;
             py.stdout.on('data', function (data) {
                 var textChunk = data.toString('utf8');// buffer to string
-
                 util.log(textChunk);
-                dataString += data.toString();
-            });
-            py.stdout.on('end', function () {
-                //console.log('Sum of numbers=', dataString);
+                res.json({suggest:textChunk});
             });
             py.stdin.write(JSON.stringify(data));
             py.stdin.end();
+        },
+        imageToText: function (req, res) {
+            var spawn = require('child_process').spawn,
+                sh = spawn('tesseract' ['EOB_images/demo.png', 'EOB_image_info', '-psm', '1']);
+                console.log("Should have spawn tess")
             res.sendStatus(200);
         }
     };

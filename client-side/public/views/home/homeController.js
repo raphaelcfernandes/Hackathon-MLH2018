@@ -1,30 +1,39 @@
 app.controller('homeCtrl', function ($scope, $state, $rootScope, $timeout, $mdDialog, $sce, $interval, $stateParams) {
 
-    $scope.result = "teste";
-    $scope.allergy='';
-    $scope.problem='';
-
-    $scope.add = function(){
+    $scope.result = "";
+    $scope.allergy = '';
+    $scope.problem = '';
+    $scope.alertMessage = '';
+    $scope.add = function () {
         var data = {
             arg1: "ALLERGY",
             arg2: $scope.allergy
         }
         $rootScope.req('/sendAllergy', data, 'POST', function (success) {
             console.log(success);
-           // $scope.allergy = '';
+            // $scope.allergy = '';
         }, function (err) {
             console.log(err);
         });
     }
 
-    $scope.addProblem = function(){
+    $scope.captureImage = function () {
+        $rootScope.req('/textToImage', null, 'POST', function (success) {
+            console.log("capturing image");
+            // $scope.allergy = '';
+        }, function (err) {
+            console.log(err);
+        });
+    }
+
+    $scope.addProblem = function () {
         var data = {
             arg1: "PROBLEM",
             arg2: $scope.problem
         }
         $rootScope.req('/sendProblem', data, 'POST', function (success) {
             console.log(success);
-           // $scope.allergy = '';
+            // $scope.allergy = '';
         }, function (err) {
             console.log(err);
         });
@@ -40,15 +49,22 @@ app.controller('homeCtrl', function ($scope, $state, $rootScope, $timeout, $mdDi
 
     }
 
+
     $scope.onSuccess = function (data) {
         if (data) {
             var datas = {
                 data: data
             };
             $rootScope.req('/sendMedicationName', datas, 'POST', function (success) {
-                console.log(success);
-                $scope.result = success.result;
-                $mdDialog.hide();
+                $mdDialog.show(
+                    $mdDialog.alert()
+                        .parent(angular.element(document.querySelector('#popupContainer')))
+                        .clickOutsideToClose(true)
+                        .title('Result')
+                        .textContent(success.suggest)
+                        .ariaLabel('Alert Dialog Demo')
+                        .ok('Got it')
+                );
             }, function (err) {
                 $scope.msg_error = "QR-Code inválido";
             });

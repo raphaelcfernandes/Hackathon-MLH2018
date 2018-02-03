@@ -5,4 +5,5 @@ module.exports = function (app) {
     app.post('/sendMedicationName',request.medicationName);
     app.post('/sendAllergy',request.sendAllergy);
     app.post('/sendProblem',request.sendProblem);
+    app.post('/imageToText',request.imageToText);
 };

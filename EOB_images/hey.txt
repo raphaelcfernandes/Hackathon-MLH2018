@@ -1,0 +1,50 @@
+USABLE MUTUAL INSURANCE COMPANY
+
+Date: 01/01/14 EXPLANATION OF BENEFITS
+This is not a hill
+
+0 9 9 0 9 0
+
+SUBSCRIBER NAME PATIENT'S NAME RELATIONSHIP ID. NUMBER GROUP NAME GROUP NUMBER
+JANE DOE JANE DOE SUBSCRIBER 111111111-00 FUN ENTERPRISES 111111
+0Claim Number: 041114111111 eProvider of Service: JOHN DOE MD 9 Provider Number: 99999-0001
+NPINumber: 11111111110
+
+10 11 12 13 14 15 16 17 18 19 20
+I ate of Service Type of Service (Days/Counts) Billed Allowed Non—covered Deductible Cop ayment Coinsurance Primary Provider Provider Explanation Codes
+rom/Thru Amount Amount Amount Amount Amount Amount Payer Adjustment Payment
+Amount Amount *
+
+1/ 5/14- 1/ 5/14 Ambulance Services (1) 5,500.00 5,500.00 m 140.00 m 750.00 mm 4,610.00 _
+
+     
+ 
+
+laim Totals 6,090.00 5,960.00 100.00 140.00 E 750.00 E 30.00 5,070.00
+
+@You are Responsible for 990.00
+
+AN AMOUNT OF $140.00 HAS BEEN APPLIED TO THE DEDUCTIBLE - CALENDAR YEAR - MEMBER - IN-NETWORK LIMIT OF $1,000.00; LEAVING $.00
+AN AMOUNT OF $750.00 HAS BEEN APPLIED TO THE OUT-OF-POCKET - DOLLAR - MEMBER - IN-NETWORK LIMIT OF $2,000.00; LEAVING $.00
+
+@ EXPLANATION CODES
+QO COVERED AMOUNT REDUCED TO OUTPATIENT ALLOWANCE-MEMBER NOT RESPONSIBLE
+GD MAXIMUM BENEFIT FOR AIR AMBULANCE SERVICES HAS BEEN REACHED
+
+If your claim was denied in whole or in part, this notice explains the reasons for the denial. If you would like assistance with identifying the speciﬁc claim denied, including the date of the
+medical service, the claim amount, doctor or hospital who provided the service, or other information, please consult your personal health record at www.usablemutual.com or call
+the customer service phone number listed on your ID card.
+
+If the above Explanation Code(s) indicate that your claim for beneﬁts has been pended until we receive additional information and we do not receive the requested information within ninety days
+of our request, your claim will be considered denied. Please return a copy of this Explanation of Beneﬁts form when submitting the requested data.
+
+If you have questions about an Explanation of Beneﬁts determination, you may contact USAble Mutual at the Customer Service number listed on your Identiﬁcation Card or by writing to
+USAble Mutual at P. O. Box 1151, Little Rock, AR 72203 and ask that the determination be reviewed. Customer Service will respond in like manner with answers to your request. This informal
+review is not an Appeal nor a substitute for an Appeal. Nor must you ask for an informal review in order to request an Appeal.
+
+You may request a review of a denial of beneﬁts for any claim or portion of a claim by sending a written appeal to the Appeals Coordinator, USAble Mutual, 601 Gaines Street, Little Rock, AR
+72203. Your request must be made within 180 days after you have been notiﬁed of the denial of beneﬁts. Your appeal should include your name, your identiﬁcation number and reference to the
+denied claim. In preparing your request for review, you or your authorized representative have the right to examine documents relevant to your claim. You or your authorized representative may
+submit, with your request for review, any additional information relevant to your claim and may also submit issues and cements in writing. You will receive a ﬁnal decision in writing within
+60 days after the receipt of your review request.
+
