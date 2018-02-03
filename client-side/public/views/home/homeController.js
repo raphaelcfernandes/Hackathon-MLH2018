@@ -11,7 +11,7 @@ app.controller('homeCtrl', function ($scope, $state, $rootScope, $timeout, $mdDi
         }
         $rootScope.req('/sendAllergy', data, 'POST', function (success) {
             console.log(success);
-            // $scope.allergy = '';
+            $scope.allergy = '';
         }, function (err) {
             console.log(err);
         });
@@ -20,7 +20,6 @@ app.controller('homeCtrl', function ($scope, $state, $rootScope, $timeout, $mdDi
     $scope.captureImage = function () {
         $rootScope.req('/imageToText', null, 'POST', function (success) {
             console.log("capturing image");
-            // $scope.allergy = '';
         }, function (err) {
             console.log(err);
         });
@@ -33,7 +32,7 @@ app.controller('homeCtrl', function ($scope, $state, $rootScope, $timeout, $mdDi
         }
         $rootScope.req('/sendProblem', data, 'POST', function (success) {
             console.log(success);
-            // $scope.allergy = '';
+            $scope.problem = '';
         }, function (err) {
             console.log(err);
         });

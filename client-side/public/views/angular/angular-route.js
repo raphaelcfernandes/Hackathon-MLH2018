@@ -48,6 +48,10 @@ app.config(['$stateProvider', '$locationProvider', function ($stateProvider, $lo
                 '': {
                     templateUrl: '../home/home.html',
                     controller: 'homeCtrl'
+                },
+                'navbar':{
+                    templateUrl: '../toolbar/toolbar.html',
+                    controller: 'toolbarCtrl'
                 }
             }
         })
@@ -79,8 +83,7 @@ app.config(['momentPickerProvider', function (momentPickerProvider) {
 
 app.config(function ($mdThemingProvider) {
     $mdThemingProvider.theme('default')
-        .primaryPalette('blue')
-        .accentPalette('orange');
+        .primaryPalette('blue');
 });
 
 

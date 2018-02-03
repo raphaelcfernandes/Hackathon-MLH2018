@@ -9,4 +9,5 @@ app.controller('toolbarCtrl', function ($scope,$rootScope, $state) {
             console.log(err);
         });
     };
+    $scope.currentNavItem = 'page1';
 });

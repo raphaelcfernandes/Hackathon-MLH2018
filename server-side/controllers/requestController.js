@@ -68,7 +68,7 @@ module.exports = function (app) {
             var pwd = process.cwd()
             console.log(pwd)
             var spawn = require('child_process').spawn,
-                sh = spawn('tesseract', [pwd + '/EOB_images/demo.png', pwd + '/EOB_image_info']);
+                sh = spawn('tesseract', [pwd + '/EOB_images/surgery.jpg', pwd + '/EOB_image_info']);
                 py = spawn('python', [pwd + 'parse_EOB.py'])
                 
             console.log("Should have spawned tess and EOBtext->database")
