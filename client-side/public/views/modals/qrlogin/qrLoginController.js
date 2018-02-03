@@ -6,6 +6,7 @@ app.controller('qrLoginCtrl', function($scope,$rootScope,$state,$timeout,$mdDial
     $scope.showGreetingqr = false;
 
     $scope.onSuccess = function(data) {
+        console.log(data);
         $mdDialog.hide();
         // if(data) {
         //     var datas = {
