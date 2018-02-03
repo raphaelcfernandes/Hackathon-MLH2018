@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html ng-app="SantaUTIApp">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>santauti</title>
+    <base href="/">
+
+    <!--
+        JS SCRIPTS
+    -->
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../bower_components/angular/angular.min.js"></script>
+    <script src="../bower_components/angular-route/angular-route.min.js"></script>
+    <script src="../assets/angular-ui-router/release/angular-ui-router.min.js"></script>
+
+
+    <script src="../bower_components/moment/min/moment-with-locales.min.js"></script>
+    <script src="../bower_components/angular-moment-picker/dist/angular-moment-picker.min.js"></script>
+    <script src="../bower_components/angular-qr-scanner/qr-scanner.js"></script>
+    <script src="../bower_components/angular-qr-scanner/src/jsqrcode-combined.min.js"></script>
+    <script src="../bower_components/angular-messages/angular-messages.min.js"></script>
+    <script src="../bower_components/chart.js/dist/Chart.min.js"></script>
+
+    <!-- AngularJS Material Dependencies -->
+    <script src="../bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="../bower_components/angular-aria/angular-aria.min.js"></script>
+
+    <!-- AngularJS Material Javascript using GitCDN to load directly from `bower-material/master` -->
+    <script src="../bower_components/angular-material/angular-material.min.js"></script>
+
+    <script src="angular/angular-route.js"></script>
+
+    <script src="../bower_components/ngstorage/ngStorage.min.js"></script>
+    <script src="home/homeController.js"></script>
+    <script src="toolbar/toolbar.js"></script>
+    <script src="modals/qrlogin/qrLoginController.js"></script>
+    <script src="../bower_components/angular-qr-scanner/qr-scanner.js"></script>
+    <script src="../bower_components/angular-qr-scanner/src/jsqrcode-combined.min.js"></script>
+    <!-- <script src="../bower_components/angular-qr-scanner/qr-scanner.js"></script>
+    <script src="../bower_components/angular-qr-scanner/src/jsqrcode-combined.min.js"></script> -->
+    <!--
+        JS SCRIPTS
+    -->
+
+    <!--
+        CSS
+    -->
+
+    <link rel="stylesheet" href="../assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="../assets/css/app.css">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300">
+    <link rel="stylesheet" href="../bower_components/angular-material/angular-material.min.css">
+    <link rel="stylesheet" href="../bower_components/angular-moment-picker/dist/angular-moment-picker.min.css">
+    <!--
+        CSS
+    -->
+
+
+</head>
+<style type="text/css">
+    /* Hide when Angular is not yet loaded and initialized */
+
+    [ng\:cloak],
+    [ng-cloak],
+    [data-ng-cloak],
+    [x-ng-cloak],
+    .ng-cloak,
+    .x-ng-cloak {
+        display: none !important;
+    }
+</style>
+<div ui-view="navbar"></div>
+<div ui-view="informacaoBox"></div>
+
+<body>
+
+    <!-- Preloading -->
+    <div ng-show="1 == 0" class="loadingDot1">
+        <div class="loadingDot2">
+            <div class="spinner">
+                <div class="dot1"></div>
+                <div class="dot2"></div>
+            </div>
+        </div>
+    </div>
+    <div ui-view></div>
+
+</body>
+
+</html>
