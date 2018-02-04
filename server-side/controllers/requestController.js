@@ -57,24 +57,22 @@ module.exports = function (app) {
             py.stdout.on('data', function (data) {
                 var textChunk = data.toString('utf8');// buffer to string
                 util.log(textChunk);
-                
-                res.json({suggest:textChunk});
+
+                res.json({ suggest: textChunk });
             });
             py.stdin.write(JSON.stringify(data));
             py.stdin.end();
         },
         imageToText: function (req, res) {
-            
-            var pwd = process.cwd()
-            console.log(pwd)
             var spawn = require('child_process').spawn,
-                sh = spawn('tesseract', [pwd + '/EOB_images/surgery.jpg', pwd + '/EOB_image_info']);
-                py = spawn('python', [pwd + 'parse_EOB.py'])
-                
-            console.log("Should have spawned tess and EOBtext->database")
-
+                py = spawn('python', ['/home/raphael/Documents/hackathon/server-side/controllers/parse_eob.py']), data = req.body, dataString = '';
+            py.stdout.on('data', function (data) {
+                var textChunk = data.toString('utf8');// buffer to string
+                util.log(textChunk);
+            });
+            py.stdin.end();
             res.sendStatus(200);
-        } 
+        }
     };
     function runPythonScript(res) {
         var spawn = require('child_process').spawn;

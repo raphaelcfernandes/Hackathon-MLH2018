@@ -8,7 +8,8 @@ def read_data(file_name, list):
             if i != 0:
                 list.append(row)
 
-file = open('finalTest2.txt', 'r')
+
+file = open('/home/raphael/Documents/hackathon/server-side/controllers/finalTest2.txt', 'r')
 lines = file.readlines()
 file.close()
 
@@ -19,8 +20,7 @@ for line in lines:
         keywords.append(word)
 
 reference = []
-read_data('reference.csv', reference)
-
+read_data('/home/raphael/Documents/hackathon/server-side/controllers/reference.csv', reference)
 # Data structure that matches the database
 # [Type, Detail, Date]
 li = []
@@ -42,7 +42,7 @@ for i, keyword in enumerate(keywords):
     elif keyword == "SURGERY":
     	li.append(["SURGERY", "na"])
 
-with open('database.csv', 'a') as database:
+with open('/home/raphael/Documents/hackathon/server-side/controllers/database.csv', 'a') as database:
     writer = csv.writer(database)
     for data in li:
         writer.writerow([data[0], data[1]])
